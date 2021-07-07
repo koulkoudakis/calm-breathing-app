@@ -7,11 +7,12 @@ const bpmDisplay = document.getElementById('bpm');
 const point = document.getElementById('pointer');
 const input = document.getElementById("myInput");
 
-
+// Get breaths per minute from local storage or assign default
+const defaultBpm = 8;
 const localStorageBpm = parseInt(JSON.parse(localStorage.getItem('bpm')));
-// let bpm = 8;
-let bpm = parseInt(localStorage.getItem('bpm')) !== null ? localStorageBpm : 8;
+let bpm = (JSON.parse(localStorage.getItem('bpm'))) !== null ? localStorageBpm : defaultBpm;
 
+// Inhale: 2x, Hold, 1x, Exhale: 2x
 let totalTime = 60000 / bpm;
 let breatheTime = (totalTime / 5) * 2;
 let holdTime = totalTime / 5;
