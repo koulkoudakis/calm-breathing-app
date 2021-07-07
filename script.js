@@ -10,7 +10,7 @@ const input = document.getElementById("myInput");
 
 const localStorageBpm = parseInt(JSON.parse(localStorage.getItem('bpm')));
 // let bpm = 8;
-let bpm = +localStorage.getItem('bpm') !== null ? localStorageBpm : 8;
+let bpm = parseInt(localStorage.getItem('bpm')) !== null ? localStorageBpm : 8;
 
 let totalTime = 60000 / bpm;
 let breatheTime = (totalTime / 5) * 2;
