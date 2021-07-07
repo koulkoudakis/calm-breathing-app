@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0.24);
+  --resize-speed: 3s;
+}
+
+body {
+  background: darkolivegreen url('./img/calm.png') no-repeat center center/cover;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.circle {
+  background-color: rgb(0, 39, 54);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 1;
+}
+
+.gradient-circle {
+  background: conic-gradient( #00d4db 0%, #00bdc4 40%, #ffffff 40%, #ffffff 60%, #008a9c 60%, #006572 100%);
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  opacity: 0.5;
+}
+
+.pointer {
+  background-color: white;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom center;
+  opacity: 0.8;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container.grow {
+  animation: grow var(--resize-speed) linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.container.shrink {
+  animation: shrink var(--resize-speed) linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
+
+.button-container {
+  display: flex;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  background-color: #00d4db;
+  color: white;
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  width: 50px;
+  padding: 10px 10px;
+  margin: 10px 30px;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+h1 {
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+h4 {
+  opacity: 0.5;
+}
+
+p {
+  font-size: 2rem;
+}
+
+input {
+  border: 0;
+  border-radius: 15px;
+  font-size: 1rem;
+  color: white;
+  padding: 15px 5px;
+  width: 100%;
+  margin: 10px 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* 
+body {
+  background: #224941 url('./img/calm.png') no-repeat center center/cover;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(1);
+}
+
+.circle {
+  background-color: #010f1c;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle {
+  background: conic-gradient( #55b7a4 0%, #4ca493 40%, #fff 40%, #fff 60%, #336d62 60%, #2a5b52 100%);
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.pointer {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container.grow {
+  animation: grow 3s linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.container.shrink {
+  animation: shrink 3s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+} */

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  <title>Calm Breathing App</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+</head>
+
+<body>
+  <h1>Calm yourself...</h1>
+
+  <div class="container" id="container">
+    <div class="circle"></div>
+
+    <p id="text">Breathe in...</p>
+    <br>
+    <h3>BPM: <span id="bpm">8</span></h3>
+
+    <div class="pointer-container" id="pointer">
+      <span class="pointer"></span>
+    </div>
+
+    <div class="gradient-circle"></div>
+  </div>
+
+  <div class="button-container">
+    <button class="change" id="decrease"> <i class="fas fa-minus"></i>
+    </button>
+
+    <input class="input" type="number" id="bpm-input" placeholder="Breath Rate..." default=8></input>
+
+
+    <button class="change" id="increase"> <i class="fas fa-plus"></i>
+
+    </button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+<h4>by Sharome Burton, v0.1</h4>
+
+</html>
